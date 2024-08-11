@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "PaparaProjectBase/1.0.0": {
+        "dependencies": {
+          "PaparaProjectSchema": "1.0.0"
+        },
+        "runtime": {
+          "PaparaProjectBase.dll": {}
+        }
+      },
+      "PaparaProjectSchema/1.0.0": {
+        "runtime": {
+          "PaparaProjectSchema.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "PaparaProjectBase/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PaparaProjectSchema/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

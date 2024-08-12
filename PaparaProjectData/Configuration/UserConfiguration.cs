@@ -10,6 +10,12 @@ namespace PaparaFinalData.Configuration
         {
             builder.Property(u => u.Name).IsRequired(true).HasMaxLength(100);
             builder.Property(u => u.Surname).IsRequired(true).HasMaxLength(100);
+            builder.Property(u => u.UserName).IsRequired(true).HasMaxLength(100);
+            builder.Property(u => u.Email).IsRequired(true).HasMaxLength(100);
+            builder.Property(u => u.Password).IsRequired(true).HasMaxLength(100);
+            builder.Property(u => u.PhoneNumber).IsRequired(true).HasMaxLength(15);
+            builder.Property(u => u.Role).IsRequired(true).HasMaxLength(50);
+            builder.Property(u => u.Point).IsRequired(false);
 
             builder.HasMany(u => u.Wallets)
                    .WithOne(w => w.Users)
@@ -25,31 +31,7 @@ namespace PaparaFinalData.Configuration
                    .WithOne(w => w.Users)
                    .HasForeignKey(w => w.UserId)
                    .OnDelete(DeleteBehavior.NoAction);
-
-            builder.HasMany(u => u.Invoices)
-                   .WithOne(w => w.Users)
-                   .HasForeignKey(w => w.UserId)
-                   .OnDelete(DeleteBehavior.Cascade);
-
-            builder.HasMany(u => u.AspNetUserClaims)
-                   .WithOne()
-                   .HasForeignKey(w => w.UserId)
-                   .OnDelete(DeleteBehavior.Cascade);
-
-            builder.HasMany(u => u.AspNetUserTokens)
-                   .WithOne()
-                   .HasForeignKey(w => w.UserId)
-                   .OnDelete(DeleteBehavior.Cascade);
-
-            builder.HasMany(u => u.AspNetUserLogins)
-                   .WithOne()
-                   .HasForeignKey(w => w.UserId)
-                   .OnDelete(DeleteBehavior.Cascade);
-
-            builder.HasMany(u => u.AspNetUserRoles)
-                   .WithOne()
-                   .HasForeignKey(w => w.UserId)
-                   .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }
+

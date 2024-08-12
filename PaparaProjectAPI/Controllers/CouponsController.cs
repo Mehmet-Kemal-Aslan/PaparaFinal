@@ -1,15 +1,10 @@
 ﻿using MediatR;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PaparaProjectBase.APIResponse;
-using PaparaProjectBusiness.Features.Commands.Categories.CreateCategories;
-using PaparaProjectBusiness.Features.Commands.Categories.DeleteCategories;
-using PaparaProjectBusiness.Features.Commands.Categories.UpdateCategories;
 using PaparaProjectBusiness.Features.Commands.Coupons.CreateCoupons;
 using PaparaProjectBusiness.Features.Commands.Coupons.DeleteCoupons;
 using PaparaProjectBusiness.Features.Commands.Coupons.UpdateCoupons;
-using PaparaProjectBusiness.Features.Queries.Categories.GetAllCategories;
-using PaparaProjectBusiness.Features.Queries.Categories.GetCategoryById;
 using PaparaProjectBusiness.Features.Queries.Coupons.GetAllCoupons;
 using PaparaProjectBusiness.Features.Queries.Coupons.GetCouponById;
 using PaparaProjectSchema.Requests;
@@ -47,7 +42,7 @@ namespace PaparaProjectAPI.Controllers
         }
 
         [HttpPost]
-        //[Authorize(Roles = "admin")]
+        [Authorize(Roles = "string")]
         public async Task<ApiResponse<CouponResponse>> Post([FromBody] CouponRequest value)
         {
             CreateCouponCommandRequest operation = new CreateCouponCommandRequest(value);

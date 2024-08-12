@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PaparaProjectBusiness")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c91f94dce90e92528c9e43e4931fbd9e445624f9")]
 [assembly: System.Reflection.AssemblyProductAttribute("PaparaProjectBusiness")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PaparaProjectBusiness")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

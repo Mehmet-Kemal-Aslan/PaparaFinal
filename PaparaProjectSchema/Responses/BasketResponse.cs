@@ -8,8 +8,9 @@ namespace PaparaProjectSchema.Responses
 {
     public class BasketResponse
     {
-        public string UserId { get; set; }
+        public int UserId { get; set; }
         public int? OrderId { get; set; }
-        public ICollection<BasketItemResponse> BasketItems { get; set; }
+        public List<BasketItemResponse> BasketItems { get; set; }
+        public decimal BasketPrice { get; set; }
     }
 }

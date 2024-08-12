@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using MediatR;
 using PaparaFinalData.Entity;
+using PaparaProjectBase.Models.Messages;
 using PaparaProjectData.UnitOfWork;
 using PaparaProjectSchema.Responses;
 
@@ -23,7 +24,7 @@ namespace PaparaProjectBusiness.Features.Queries.Products.GetProductsByCategory
             if (productList == null || !productList.Any())
             {
                 GetProductsByCategoryResponse<ProductResponse> nullResponse = new GetProductsByCategoryResponse<ProductResponse>(null);
-                nullResponse.Message = "Bulunamadı!";
+                nullResponse.Message = ResponseMessages.NotFound;
                 return nullResponse;
             }
             List<ProductResponse> mappedWallets = mapper.Map<List<ProductResponse>>(productList);

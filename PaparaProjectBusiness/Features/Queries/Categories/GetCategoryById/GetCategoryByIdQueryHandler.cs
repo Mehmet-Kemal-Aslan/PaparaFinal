@@ -2,6 +2,7 @@
 using MediatR;
 using PaparaFinalData.Entity;
 using PaparaProjectBase.APIResponse;
+using PaparaProjectBase.Models.Messages;
 using PaparaProjectBusiness.Features.Queries.Wallets.GetWalletById;
 using PaparaProjectData.UnitOfWork;
 using PaparaProjectSchema.Responses;
@@ -25,7 +26,7 @@ namespace PaparaProjectBusiness.Features.Queries.Categories.GetCategoryById
             if (category == null)
             {
                 GetCategoryByIdQueryResponse<CategoryResponse> nullResponse = new GetCategoryByIdQueryResponse<CategoryResponse>(null);
-                nullResponse.Message = "Bulunamadı!";
+                nullResponse.Message = ResponseMessages.NotFound;
                 return nullResponse;
             }
             CategoryResponse mappedCategories = mapper.Map< CategoryResponse>(category);

@@ -12,6 +12,7 @@ namespace PaparaFinalData.Configuration
 
             builder.Property(b => b.UserId).IsRequired(true);
             builder.Property(b => b.OrderId).IsRequired(false);
+            builder.Property(b => b.Price).IsRequired(true);
 
             builder.HasOne(b => b.Users)
                    .WithMany(b => b.Baskets)

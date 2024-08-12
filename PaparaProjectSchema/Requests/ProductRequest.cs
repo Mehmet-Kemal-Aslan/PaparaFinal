@@ -8,7 +8,6 @@
         public int Stock { get; set; }
         public decimal Price { get; set; }
         public decimal PointMultiplierPercentage { get; set; }
-        public ICollection<BasketItemRequest>? BasketItems { get; set; }
         public ICollection<ProductCategoryMapRequest>? ProductCategoryMaps { get; set; }
     }
 }

@@ -11,7 +11,7 @@ namespace PaparaFinalData.Entity
     {
         //public string Name { get; set; }
         public decimal Money {  get; set; }
-        public string UserId { get; set; }
+        public int UserId { get; set; }
         public User Users { get; set; }
     }
 }

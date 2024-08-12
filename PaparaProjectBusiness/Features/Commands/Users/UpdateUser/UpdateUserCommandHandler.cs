@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using MediatR;
-using Microsoft.AspNetCore.Identity;
 using PaparaFinalData.Entity;
 using PaparaProjectBase.APIResponse;
 using PaparaProjectBusiness.Features.Commands.Users.CreateUser;
@@ -28,10 +27,7 @@ namespace PaparaProjectBusiness.Features.Commands.Users.UpdateUser
             if (validationResult.IsSuccess is false)
                 return validationResult;
 
-            var passwordHasher = new PasswordHasher<IdentityUser>();
             var mapped = mapper.Map<UserRequest, User>(request.Request);
-            string hashedPassword = passwordHasher.HashPassword(mapped, request.Request.Password);
-            mapped.PasswordHash = hashedPassword;
             unitOfWork.UserWriteRepository.Update(mapped);
             await unitOfWork.Complete();
 

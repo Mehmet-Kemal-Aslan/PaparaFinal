@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.Options;
-using PaparaProjectSchema.Notification;
+using PaparaProjectBase.Models.Notification;
 using System.Net.Mail;
 
 namespace PaparaProjectBussiness.Notifications

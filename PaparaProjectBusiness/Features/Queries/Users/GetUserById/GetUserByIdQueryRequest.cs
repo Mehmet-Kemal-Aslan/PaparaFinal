@@ -9,8 +9,8 @@ using System.Threading.Tasks;
 
 namespace PaparaProjectBusiness.Features.Queries.Users.GetUserById
 {
-    public class GetUserByIdQueryRequest(string userId) : IRequest<GetUserByIdQueryResponse<UserResponse>>
+    public class GetUserByIdQueryRequest(int userId) : IRequest<GetUserByIdQueryResponse<UserResponse>>
     {
-        public string UserId = userId;
+        public int UserId = userId;
     }
 }

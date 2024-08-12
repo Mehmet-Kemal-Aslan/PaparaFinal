@@ -17,3 +17,4 @@ C:\Users\Mehmet Kemal\Desktop\Uygulama\PaparaProject\PaparaProjectData\obj\Debug
 C:\Users\Mehmet Kemal\Desktop\Uygulama\PaparaProject\PaparaProjectData\obj\Debug\net8.0\ref\PaparaProjectData.dll
 C:\Users\Mehmet Kemal\Desktop\Uygulama\PaparaProject\PaparaProjectData\bin\Debug\net8.0\PaparaProjectSchema.dll
 C:\Users\Mehmet Kemal\Desktop\Uygulama\PaparaProject\PaparaProjectData\bin\Debug\net8.0\PaparaProjectSchema.pdb
+C:\Users\Mehmet Kemal\Desktop\Uygulama\PaparaProject\PaparaProjectData\obj\Debug\net8.0\PaparaProjectData.sourcelink.json

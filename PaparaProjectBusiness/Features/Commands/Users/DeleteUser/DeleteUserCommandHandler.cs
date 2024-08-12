@@ -1,13 +1,7 @@
-﻿using AutoMapper;
-using MediatR;
+﻿using MediatR;
 using PaparaProjectBase.APIResponse;
+using PaparaProjectBase.Models.Messages;
 using PaparaProjectData.UnitOfWork;
-using PaparaProjectSchema.Responses;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PaparaProjectBusiness.Features.Commands.Users.DeleteUser
 {
@@ -21,9 +15,11 @@ namespace PaparaProjectBusiness.Features.Commands.Users.DeleteUser
 
         public async Task<APIDeleteResponse> Handle(DeleteUserCommandRequest request, CancellationToken cancellationToken)
         {
-            await unitOfWork.UserWriteRepository.Delete(request.UserId);
+            bool deleteResult = await unitOfWork.UserWriteRepository.Delete(request.UserId);
             await unitOfWork.Complete();
             APIDeleteResponse response = new APIDeleteResponse();
+            if (deleteResult is false)
+                response.Message = ResponseMessages.NotFound;
             return new APIDeleteResponse();
         }
     }

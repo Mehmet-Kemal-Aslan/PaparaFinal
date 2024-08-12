@@ -9,10 +9,11 @@ namespace PaparaFinalData.Entity
 {
     public class Basket : BaseEntity
     { 
-        public string UserId {  get; set; }
+        public int UserId {  get; set; }
         public User Users { get; set; }
         public int? OrderId { get; set; }
         public Order? Orders { get; set; }
+        public decimal Price { get; set; }
         public ICollection<BasketItem> BasketItems { get; set; }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using PaparaFinalData.Entity;
 using PaparaProjectData.GenericRepository.GenericRepositoryBaseEntity;
-using PaparaProjectData.GenericRepository.GenericRepositoryIdentityUser;
 
 namespace PaparaProjectData.UnitOfWork
 {
@@ -8,8 +7,8 @@ namespace PaparaProjectData.UnitOfWork
     {
         Task Complete();
         Task CompleteWithTransaction();
-        IGenericReadRepositoryIdentityUser<User> UserReadRepository { get; }
-        IGenericWriteRepositoryIdentityUser<User> UserWriteRepository { get; }
+        IGenericReadRepositoryBaseEntity<User> UserReadRepository { get; }
+        IGenericWriteRepositoryBaseEntity<User> UserWriteRepository { get; }
         IGenericReadRepositoryBaseEntity<Wallet> WalletReadRepository { get; }
         IGenericWriteRepositoryBaseEntity<Wallet> WalletWriteRepository { get; }
         IGenericReadRepositoryBaseEntity<Category> CategoryReadRepository { get; }
@@ -18,5 +17,9 @@ namespace PaparaProjectData.UnitOfWork
         IGenericWriteRepositoryBaseEntity<Coupon> CouponWriteRepository { get; }
         IGenericReadRepositoryBaseEntity<Product> ProductReadRepository { get; }
         IGenericWriteRepositoryBaseEntity<Product> ProductWriteRepository { get; }
+        IGenericReadRepositoryBaseEntity<Basket> BasketReadRepository { get; }
+        IGenericWriteRepositoryBaseEntity<Basket> BasketWriteRepository { get; }
+        IGenericReadRepositoryBaseEntity<BasketItem> BasketItemReadRepository { get; }
+        IGenericWriteRepositoryBaseEntity<BasketItem> BasketItemWriteRepository { get; }
     }
 }

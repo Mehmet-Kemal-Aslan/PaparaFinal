@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using PaparaProjectBase.APIResponse;
+using PaparaProjectBase.Models.Messages;
 using PaparaProjectData.UnitOfWork;
 
 namespace PaparaProjectBusiness.Features.Commands.Coupons.DeleteCoupons
@@ -18,7 +19,7 @@ namespace PaparaProjectBusiness.Features.Commands.Coupons.DeleteCoupons
             await unitOfWork.Complete();
             APIDeleteResponse response = new APIDeleteResponse();
             if (disactivateResult is false)
-                response.Message = "bulunamadı";
+                response.Message = ResponseMessages.NotFound;
             return response;
         }
     }

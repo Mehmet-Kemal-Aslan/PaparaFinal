@@ -17,3 +17,4 @@ C:\Users\Mehmet Kemal\Desktop\Uygulama\PaparaProject\PaparaProjectBusiness\obj\D
 C:\Users\Mehmet Kemal\Desktop\Uygulama\PaparaProject\PaparaProjectBusiness\obj\Debug\net8.0\refint\PaparaProjectBusiness.dll
 C:\Users\Mehmet Kemal\Desktop\Uygulama\PaparaProject\PaparaProjectBusiness\obj\Debug\net8.0\PaparaProjectBusiness.pdb
 C:\Users\Mehmet Kemal\Desktop\Uygulama\PaparaProject\PaparaProjectBusiness\obj\Debug\net8.0\ref\PaparaProjectBusiness.dll
+C:\Users\Mehmet Kemal\Desktop\Uygulama\PaparaProject\PaparaProjectBusiness\obj\Debug\net8.0\PaparaProjectBusiness.sourcelink.json

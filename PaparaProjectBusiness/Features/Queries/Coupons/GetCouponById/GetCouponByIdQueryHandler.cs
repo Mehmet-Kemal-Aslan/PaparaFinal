@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using MediatR;
 using PaparaFinalData.Entity;
+using PaparaProjectBase.Models.Messages;
 using PaparaProjectData.UnitOfWork;
 using PaparaProjectSchema.Responses;
 
@@ -23,7 +24,7 @@ namespace PaparaProjectBusiness.Features.Queries.Coupons.GetCouponById
             if (coupon == null)
             {
                 GetCouponByIdQueryResponse<CouponResponse> nullResponse = new GetCouponByIdQueryResponse<CouponResponse>(null);
-                nullResponse.Message = "Bulunamadı!";
+                nullResponse.Message = ResponseMessages.NotFound;
                 return nullResponse;
             }
             CouponResponse mappedCategories = mapper.Map<CouponResponse>(coupon);

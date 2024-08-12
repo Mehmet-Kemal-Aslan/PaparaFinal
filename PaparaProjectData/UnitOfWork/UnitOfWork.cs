@@ -3,7 +3,6 @@ using PaparaFinalData.Context;
 using PaparaFinalData.Entity;
 using PaparaProjectData.GenericRepository;
 using PaparaProjectData.GenericRepository.GenericRepositoryBaseEntity;
-using PaparaProjectData.GenericRepository.GenericRepositoryIdentityUser;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.Metrics;
@@ -17,8 +16,8 @@ namespace PaparaProjectData.UnitOfWork
     {
         private readonly PaparaProjectDbContext dbContext;
 
-        public IGenericReadRepositoryIdentityUser<User> UserReadRepository { get; }
-        public IGenericWriteRepositoryIdentityUser<User> UserWriteRepository { get; }
+        public IGenericReadRepositoryBaseEntity<User> UserReadRepository { get; }
+        public IGenericWriteRepositoryBaseEntity<User> UserWriteRepository { get; }
         public IGenericReadRepositoryBaseEntity<Wallet> WalletReadRepository { get; }
         public IGenericWriteRepositoryBaseEntity<Wallet> WalletWriteRepository { get; }
         public IGenericReadRepositoryBaseEntity<Category> CategoryReadRepository { get; }
@@ -27,13 +26,17 @@ namespace PaparaProjectData.UnitOfWork
         public IGenericWriteRepositoryBaseEntity<Coupon> CouponWriteRepository { get; }
         public IGenericReadRepositoryBaseEntity<Product> ProductReadRepository { get; }
         public IGenericWriteRepositoryBaseEntity<Product> ProductWriteRepository { get; }
+        public IGenericReadRepositoryBaseEntity<Basket> BasketReadRepository { get; }
+        public IGenericWriteRepositoryBaseEntity<Basket> BasketWriteRepository { get; }
+        public IGenericReadRepositoryBaseEntity<BasketItem> BasketItemReadRepository { get; }
+        public IGenericWriteRepositoryBaseEntity<BasketItem> BasketItemWriteRepository { get; }
 
         public UnitOfWork(PaparaProjectDbContext dbContext)
         {
             this.dbContext = dbContext;
 
-            UserReadRepository = new GenericReadRepositoryIdentityUser<User>(this.dbContext);
-            UserWriteRepository = new GenericWriteRepositoryIdentityUser<User>(this.dbContext);
+            UserReadRepository = new GenericReadRepositoryBaseEntity<User>(this.dbContext);
+            UserWriteRepository = new GenericWriteRepositoryBaseEntity<User>(this.dbContext);
             WalletReadRepository = new GenericReadRepositoryBaseEntity<Wallet>(this.dbContext);
             WalletWriteRepository = new GenericWriteRepositoryBaseEntity<Wallet>(this.dbContext);
             CategoryReadRepository = new GenericReadRepositoryBaseEntity<Category>(this.dbContext);
@@ -42,6 +45,10 @@ namespace PaparaProjectData.UnitOfWork
             CouponWriteRepository = new GenericWriteRepositoryBaseEntity<Coupon>(this.dbContext);
             ProductReadRepository = new GenericReadRepositoryBaseEntity<Product>(this.dbContext);
             ProductWriteRepository = new GenericWriteRepositoryBaseEntity<Product>(this.dbContext);
+            BasketReadRepository = new GenericReadRepositoryBaseEntity<Basket>(this.dbContext);
+            BasketWriteRepository = new GenericWriteRepositoryBaseEntity<Basket>(this.dbContext);
+            BasketItemReadRepository = new GenericReadRepositoryBaseEntity<BasketItem>(this.dbContext);
+            BasketItemWriteRepository = new GenericWriteRepositoryBaseEntity<BasketItem>(this.dbContext);
         }
 
         public async Task Complete()

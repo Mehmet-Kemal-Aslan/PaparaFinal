@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "uQyu0VCmn3+h/+uphQMpfkESbZhDFX0K5fwMifPON7cTf88nNg34vfH14HQTol4oW/HslX3D8T3k9hzrKpmfkw==",
+  "dgSpecHash": "bmTOSmY/C6RXS64vXMHWXZavC0eu+KoACM2EWCIr/sbb6qYCmFmI6pdui6CI7KP4MZtkPVXuGEY6bvVqrzKjWg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Mehmet Kemal\\Desktop\\Uygulama\\PaparaProject\\PaparaProjectBase\\PaparaProjectBase.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Mehmet Kemal\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\Mehmet Kemal\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
+    "C:\\Users\\Mehmet Kemal\\.nuget\\packages\\microsoft.extensions.primitives\\2.2.0\\microsoft.extensions.primitives.2.2.0.nupkg.sha512",
+    "C:\\Users\\Mehmet Kemal\\.nuget\\packages\\system.memory\\4.5.1\\system.memory.4.5.1.nupkg.sha512",
+    "C:\\Users\\Mehmet Kemal\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.1\\system.runtime.compilerservices.unsafe.4.5.1.nupkg.sha512",
+    "C:\\Users\\Mehmet Kemal\\.nuget\\packages\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512"
+  ],
   "logs": []
 }

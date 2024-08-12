@@ -24,9 +24,6 @@ namespace PaparaProjectBusiness.Mapper
             CreateMap<CouponRequest, Coupon>();
             CreateMap<Coupon, CouponResponse>();
 
-            CreateMap<InvoiceRequest, Invoice>();
-            CreateMap<Invoice, InvoiceResponse>();
-
             CreateMap<OrderRequest, Order>();
             CreateMap<Order, OrderResponse>();
 

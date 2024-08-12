@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Options;
+using PaparaProjectBase.Models.Notification;
 using PaparaProjectBussiness.Notifications;
-using PaparaProjectSchema.Notification;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using System.Text;

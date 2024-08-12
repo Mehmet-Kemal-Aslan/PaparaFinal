@@ -11,8 +11,8 @@ using System.Threading.Tasks;
 
 namespace PaparaProjectBusiness.Features.Commands.Users.DeleteUser
 {
-    public class DeleteUserCommandRequest(string userId) : IRequest<APIDeleteResponse>
+    public class DeleteUserCommandRequest(int userId) : IRequest<APIDeleteResponse>
     {
-        public string UserId = userId;
+        public int UserId = userId;
     }
 }

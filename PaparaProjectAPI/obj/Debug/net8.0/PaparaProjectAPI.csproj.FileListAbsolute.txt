@@ -159,3 +159,5 @@ C:\Users\Mehmet Kemal\Desktop\Uygulama\PaparaProject\PaparaProjectAPI\bin\Debug\
 C:\Users\Mehmet Kemal\Desktop\Uygulama\PaparaProject\PaparaProjectAPI\bin\Debug\net8.0\Hangfire.NetCore.dll
 C:\Users\Mehmet Kemal\Desktop\Uygulama\PaparaProject\PaparaProjectAPI\bin\Debug\net8.0\Hangfire.SqlServer.dll
 C:\Users\Mehmet Kemal\Desktop\Uygulama\PaparaProject\PaparaProjectAPI\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\Mehmet Kemal\Desktop\Uygulama\PaparaProject\PaparaProjectAPI\obj\Debug\net8.0\PaparaProjectAPI.sourcelink.json
+C:\Users\Mehmet Kemal\Desktop\Uygulama\PaparaProject\PaparaProjectAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

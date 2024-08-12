@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using PaparaProjectBase.APIResponse;
+using PaparaProjectBase.Models.Messages;
 using PaparaProjectBusiness.Features.Commands.Categories.DeleteCategories;
 using PaparaProjectData.UnitOfWork;
 using System;
@@ -24,7 +25,7 @@ namespace PaparaProjectBusiness.Features.Commands.Products.DeleteProducts
             await unitOfWork.Complete();
             APIDeleteResponse response = new APIDeleteResponse();
             if (deleteResult is false)
-                response.Message = "bulunamadı";
+                response.Message = ResponseMessages.NotFound;
             return response;
         }
     }

@@ -1,12 +1,8 @@
 ﻿using MediatR;
+using PaparaFinalData.Entity;
 using PaparaProjectBase.APIResponse;
-using PaparaProjectBusiness.Features.Commands.Wallets.DeleteWallet;
+using PaparaProjectBase.Models.Messages;
 using PaparaProjectData.UnitOfWork;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PaparaProjectBusiness.Features.Commands.Categories.DeleteCategories
 {
@@ -20,11 +16,18 @@ namespace PaparaProjectBusiness.Features.Commands.Categories.DeleteCategories
 
         public async Task<APIDeleteResponse> Handle(DeleteCategoryCommandRequest request, CancellationToken cancellationToken)
         {
+            Product products = await unitOfWork.ProductReadRepository.FirstOrDefault(c => c.ProductCategoryMaps.Any(pcm => pcm.CategoryId == request.CategoryId));
+            if (products is not null) 
+            {
+                APIDeleteResponse notNullAttention = new APIDeleteResponse();
+                notNullAttention.Message = ResponseMessages.CategoryHasProducts;
+                return notNullAttention;
+            }
             bool deleteResult = await unitOfWork.CategoryWriteRepository.Delete(request.CategoryId);
             await unitOfWork.Complete();
             APIDeleteResponse response = new APIDeleteResponse();
-            if(deleteResult is false)
-                response.Message = "bulunamadı";
+            if (deleteResult is false)
+                response.Message = ResponseMessages.NotFound;
             return response;
         }
     }

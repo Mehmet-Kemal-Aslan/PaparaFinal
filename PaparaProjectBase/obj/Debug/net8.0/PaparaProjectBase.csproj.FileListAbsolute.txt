@@ -13,3 +13,4 @@ C:\Users\Mehmet Kemal\Desktop\Uygulama\PaparaProject\PaparaProjectBase\bin\Debug
 C:\Users\Mehmet Kemal\Desktop\Uygulama\PaparaProject\PaparaProjectBase\bin\Debug\net8.0\PaparaProjectSchema.pdb
 C:\Users\Mehmet Kemal\Desktop\Uygulama\PaparaProject\PaparaProjectBase\obj\Debug\net8.0\PaparaProjectBase.csproj.AssemblyReference.cache
 C:\Users\Mehmet Kemal\Desktop\Uygulama\PaparaProject\PaparaProjectBase\obj\Debug\net8.0\PaparaProjectBase.csproj.CopyComplete
+C:\Users\Mehmet Kemal\Desktop\Uygulama\PaparaProject\PaparaProjectBase\obj\Debug\net8.0\PaparaProjectBase.sourcelink.json

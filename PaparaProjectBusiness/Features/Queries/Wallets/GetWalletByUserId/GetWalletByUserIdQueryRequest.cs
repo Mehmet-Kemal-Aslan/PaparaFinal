@@ -3,8 +3,8 @@ using PaparaProjectSchema.Responses;
 
 namespace PaparaProjectBusiness.Features.Queries.Wallets.GetWalletById
 {
-    public class GetWalletByUserIdQueryRequest(string userId) : IRequest<GetWalletByUserIdQueryResponse<WalletResponse>>
+    public class GetWalletByUserIdQueryRequest(int userId) : IRequest<GetWalletByUserIdQueryResponse<WalletResponse>>
     {
-        public string UserId = userId;
+        public int UserId = userId;
     }
 }

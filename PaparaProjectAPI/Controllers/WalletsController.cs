@@ -33,7 +33,7 @@ namespace PaparaProjectAPI.Controllers
 
         [HttpGet("{UserId}")]
         //[Authorize(Roles = "admin")]
-        public async Task<GetWalletByUserIdQueryResponse<WalletResponse>> Get([FromRoute] string UserId)
+        public async Task<GetWalletByUserIdQueryResponse<WalletResponse>> Get([FromRoute] int UserId)
         {
             GetWalletByUserIdQueryRequest operation = new GetWalletByUserIdQueryRequest(UserId);
             GetWalletByUserIdQueryResponse<WalletResponse> result = await mediator.Send(operation);

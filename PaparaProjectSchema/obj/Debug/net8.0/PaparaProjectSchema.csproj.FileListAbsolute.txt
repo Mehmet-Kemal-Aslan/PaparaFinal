@@ -9,3 +9,4 @@ C:\Users\Mehmet Kemal\Desktop\Uygulama\PaparaProject\PaparaProjectSchema\obj\Deb
 C:\Users\Mehmet Kemal\Desktop\Uygulama\PaparaProject\PaparaProjectSchema\obj\Debug\net8.0\refint\PaparaProjectSchema.dll
 C:\Users\Mehmet Kemal\Desktop\Uygulama\PaparaProject\PaparaProjectSchema\obj\Debug\net8.0\PaparaProjectSchema.pdb
 C:\Users\Mehmet Kemal\Desktop\Uygulama\PaparaProject\PaparaProjectSchema\obj\Debug\net8.0\ref\PaparaProjectSchema.dll
+C:\Users\Mehmet Kemal\Desktop\Uygulama\PaparaProject\PaparaProjectSchema\obj\Debug\net8.0\PaparaProjectSchema.sourcelink.json

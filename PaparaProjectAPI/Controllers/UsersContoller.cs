@@ -36,7 +36,7 @@ namespace PaparaProjectAPI.Controllers
 
         [HttpGet("{UserId}")]
         //[Authorize(Roles = "admin")]
-        public async Task<GetUserByIdQueryResponse<UserResponse>> Get([FromRoute] string UserId)
+        public async Task<GetUserByIdQueryResponse<UserResponse>> Get([FromRoute] int UserId)
         {
             var operation = new GetUserByIdQueryRequest(UserId);
             var result = await mediator.Send(operation);
@@ -63,7 +63,7 @@ namespace PaparaProjectAPI.Controllers
 
         [HttpDelete("{userId}")]
         //[authorize(roles = "admin")]
-        public async Task<APIDeleteResponse> Delete(string userId)
+        public async Task<APIDeleteResponse> Delete(int userId)
         {
             var operation = new DeleteUserCommandRequest(userId);
             var result = await mediator.Send(operation);

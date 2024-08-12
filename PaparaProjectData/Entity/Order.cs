@@ -9,7 +9,7 @@ namespace PaparaFinalData.Entity
 {
     public class Order : BaseEntity
     {
-        public string UserId { get; set; }
+        public int UserId { get; set; }
         public User Users { get; set; }
         public string? Description { get; set; }
         public decimal Price { get; set; }

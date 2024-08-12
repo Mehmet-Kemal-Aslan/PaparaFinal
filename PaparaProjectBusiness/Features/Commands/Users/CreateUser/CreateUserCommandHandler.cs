@@ -1,12 +1,12 @@
 ﻿using AutoMapper;
 using MediatR;
-using Microsoft.AspNetCore.Identity;
 using PaparaFinalData.Entity;
 using PaparaProjectBase.APIResponse;
+using PaparaProjectBase.Models.Notification;
+using PaparaProjectBase.Models.UserRoles;
 using PaparaProjectBusiness.Validation.ValidationChecks.User;
 using PaparaProjectBussiness.RabbitMQ;
 using PaparaProjectData.UnitOfWork;
-using PaparaProjectSchema.Notification;
 using PaparaProjectSchema.Requests;
 using PaparaProjectSchema.Responses;
 using System.Text.Json;
@@ -33,10 +33,8 @@ namespace PaparaProjectBusiness.Features.Commands.Users.CreateUser
             if (validationResult.IsSuccess is false)
                 return validationResult;
 
-            var passwordHasher = new PasswordHasher<IdentityUser>();
             var mapped = mapper.Map<UserRequest, User>(request.Request);
-            string hashedPassword = passwordHasher.HashPassword(mapped, request.Request.Password);
-            mapped.PasswordHash = hashedPassword;
+            mapped.Role = UserRoles.Normal;
             await unitOfWork.UserWriteRepository.Insert(mapped);
             await unitOfWork.Complete();
 

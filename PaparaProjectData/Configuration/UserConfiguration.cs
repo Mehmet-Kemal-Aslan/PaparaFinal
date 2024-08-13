@@ -16,6 +16,7 @@ namespace PaparaFinalData.Configuration
             builder.Property(u => u.PhoneNumber).IsRequired(true).HasMaxLength(15);
             builder.Property(u => u.Role).IsRequired(true).HasMaxLength(50);
             builder.Property(u => u.Point).IsRequired(false);
+            builder.Property(u => u.Address).IsRequired(true);
 
             builder.HasMany(u => u.Wallets)
                    .WithOne(w => w.Users)

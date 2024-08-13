@@ -11,11 +11,7 @@ namespace PaparaFinalData.Configuration
             builder.Property(b => b.IsActive).IsRequired(true);
 
             builder.Property(o => o.UserId).IsRequired(true);
-            builder.Property(o => o.Description).IsRequired(false).HasMaxLength(2000);
             builder.Property(o => o.Price).IsRequired(true);
-            builder.Property(o => o.CouponPrice).IsRequired(false);
-            builder.Property(o => o.CouponCode).IsRequired(false);
-            builder.Property(o => o.Point).IsRequired(false);
             builder.Property(o => o.Address).IsRequired(true).HasMaxLength(500);
             builder.Property(o => o.DateTime).IsRequired(true);
             builder.Property(o => o.BasketId).IsRequired(false);

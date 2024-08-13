@@ -28,6 +28,7 @@ namespace PaparaProjectBusiness.Features.Commands.Users.UpdateUser
                 return validationResult;
 
             var mapped = mapper.Map<UserRequest, User>(request.Request);
+            mapped.Id = request.userId;
             unitOfWork.UserWriteRepository.Update(mapped);
             await unitOfWork.Complete();
 

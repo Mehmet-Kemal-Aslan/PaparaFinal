@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using MediatR;
-using PaparaFinalData.Entity;
 using PaparaProjectBase.APIResponse;
+using PaparaProjectBase.Models.Messages;
 using PaparaProjectBusiness.Features.Helpers.PurchaseHelper;
 using PaparaProjectBusiness.Features.Helpers.PurchaseHelper.Model;
 using PaparaProjectBusiness.Validation.Validators;
@@ -10,22 +10,24 @@ using PaparaProjectSchema.Responses;
 
 namespace PaparaProjectBusiness.Features.Commands.Purchase.Purchase
 {
-    public class PurchaseCommandHandler : IRequestHandler<PurchaseCommandRequest, ApiResponse<PurchaseResponse>>
+    public class CreatePurchaseCommandHandler : IRequestHandler<CreatePurchaseCommandRequest, ApiResponse<OrderResponse>>
     {
         private readonly IUnitOfWork unitOfWork;
         private readonly IMapper mapper;
+        private readonly IMediator mediator;
 
-        public PurchaseCommandHandler(IUnitOfWork unitOfWork, IMapper mapper)
+        public CreatePurchaseCommandHandler(IUnitOfWork unitOfWork, IMapper mapper, IMediator mediator)
         {
             this.unitOfWork = unitOfWork;
             this.mapper = mapper;
+            this.mediator = mediator;
         }
 
-        public async Task<ApiResponse<PurchaseResponse>> Handle(PurchaseCommandRequest request, CancellationToken cancellationToken)
+        public async Task<ApiResponse<OrderResponse>> Handle(CreatePurchaseCommandRequest request, CancellationToken cancellationToken)
         {
             PurchaseValidator purchaseValidator = new PurchaseValidator();
             var validationResult = await purchaseValidator.ValidateAsync(request.purchaseRequest);
-            ApiResponse<PurchaseResponse> validationResponse = new ApiResponse<PurchaseResponse>(null);
+            ApiResponse<OrderResponse> validationResponse = new ApiResponse<OrderResponse>(null);
             if (!validationResult.IsValid)
             {
                 var errors = string.Join(", ", validationResult.Errors.Select(e => e.ErrorMessage));
@@ -40,7 +42,7 @@ namespace PaparaProjectBusiness.Features.Commands.Purchase.Purchase
 
             if (purchaseResult.isPurchased is not true)
             {
-                validationResponse.Message = "Yetersiz bakiye!";
+                validationResponse.Message = ResponseMessages.InsufficientFund;
                 return validationResponse;
             }
 
@@ -48,10 +50,11 @@ namespace PaparaProjectBusiness.Features.Commands.Purchase.Purchase
             decimal pointMultiplierPercentage = await updateProductQuantity.UpdateQuantity(request.purchaseRequest.BasketId);
             await unitOfWork.BasketItemWriteRepository.Delete(request.purchaseRequest.BasketId);
             UpdatePoint updatePoint = new UpdatePoint(unitOfWork);
-            updatePoint.Update(request.purchaseRequest.UserId, pointMultiplierPercentage, purchaseResult.MoneytoCalculatePoint);
+            CreateOrder createOrder = new CreateOrder(unitOfWork, mediator, mapper);
+            OrderResponse orderResponse = await createOrder.Create(request.purchaseRequest.UserId, request.purchaseRequest.BasketId);
+            await unitOfWork.Complete();
 
-            return new ApiResponse<PurchaseResponse>();
-
+            return new ApiResponse<OrderResponse>(orderResponse);
         }
     }
 }

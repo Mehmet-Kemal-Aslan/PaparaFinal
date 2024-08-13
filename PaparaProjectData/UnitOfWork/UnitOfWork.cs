@@ -30,6 +30,10 @@ namespace PaparaProjectData.UnitOfWork
         public IGenericWriteRepositoryBaseEntity<Basket> BasketWriteRepository { get; }
         public IGenericReadRepositoryBaseEntity<BasketItem> BasketItemReadRepository { get; }
         public IGenericWriteRepositoryBaseEntity<BasketItem> BasketItemWriteRepository { get; }
+        public IGenericReadRepositoryBaseEntity<Order> OrderReadRepository { get; }
+        public IGenericWriteRepositoryBaseEntity<Order> OrderWriteRepository { get; }
+        public IGenericReadRepositoryBaseEntity<OrderDetail> OrderDetailReadRepository { get; }
+        public IGenericWriteRepositoryBaseEntity<OrderDetail> OrderDetailWriteRepository { get; }
 
         public UnitOfWork(PaparaProjectDbContext dbContext)
         {
@@ -49,6 +53,10 @@ namespace PaparaProjectData.UnitOfWork
             BasketWriteRepository = new GenericWriteRepositoryBaseEntity<Basket>(this.dbContext);
             BasketItemReadRepository = new GenericReadRepositoryBaseEntity<BasketItem>(this.dbContext);
             BasketItemWriteRepository = new GenericWriteRepositoryBaseEntity<BasketItem>(this.dbContext);
+            OrderReadRepository = new GenericReadRepositoryBaseEntity<Order>(this.dbContext);
+            OrderWriteRepository = new GenericWriteRepositoryBaseEntity<Order>(this.dbContext);
+            OrderDetailReadRepository = new GenericReadRepositoryBaseEntity<OrderDetail>(this.dbContext);
+            OrderDetailWriteRepository = new GenericWriteRepositoryBaseEntity<OrderDetail>(this.dbContext);
         }
 
         public async Task Complete()

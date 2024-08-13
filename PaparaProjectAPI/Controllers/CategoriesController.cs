@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PaparaProjectBase.APIResponse;
 using PaparaProjectBusiness.Features.Commands.Categories.CreateCategories;
@@ -23,7 +24,6 @@ namespace PaparaProjectAPI.Controllers
         }
 
         [HttpGet]
-        //[Authorize(Roles = "admin")]
         public async Task<GetAllCategoriesQueryResponse<List<CategoryResponse>>> GetAll()
         {
             GetAllCategoriesQueryRequest operation = new GetAllCategoriesQueryRequest();
@@ -32,7 +32,6 @@ namespace PaparaProjectAPI.Controllers
         }
 
         [HttpGet("{categoryId}")]
-        //[Authorize(Roles = "admin")]
         public async Task<GetCategoryByIdQueryResponse<CategoryResponse>> Get([FromRoute] int categoryId)
         {
             GetCategoryByIdQueryRequest operation = new GetCategoryByIdQueryRequest(categoryId);
@@ -41,7 +40,7 @@ namespace PaparaProjectAPI.Controllers
         }
 
         [HttpPost]
-        //[Authorize(Roles = "admin")]
+        [Authorize(Roles = "Admin")]
         public async Task<ApiResponse<CategoryResponse>> Post([FromBody] CategoryRequest value)
         {
             CreateCategoryCommandRequest operation = new CreateCategoryCommandRequest(value);
@@ -50,7 +49,7 @@ namespace PaparaProjectAPI.Controllers
         }
 
         [HttpPut("{categoryId}")]
-        //[Authorize(Roles = "admin")]
+        [Authorize(Roles = "Admin")]
         public async Task<ApiResponse<CategoryResponse>> Put(int categoryId, [FromBody] CategoryRequest value)
         {
             UpdateCategoryCommandRequest operation = new UpdateCategoryCommandRequest(categoryId, value);
@@ -59,7 +58,7 @@ namespace PaparaProjectAPI.Controllers
         }
 
         [HttpDelete("{categoryId}")]
-        //[authorize(roles = "admin")]
+        [Authorize(Roles = "Admin")]
         public async Task<APIDeleteResponse> Delete(int categoryId)
         {
             DeleteCategoryCommandRequest operation = new DeleteCategoryCommandRequest(categoryId);

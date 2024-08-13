@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PaparaProjectBase.APIResponse;
 using PaparaProjectBusiness.Features.Commands.Wallets.CreateWallet;
@@ -23,7 +24,7 @@ namespace PaparaProjectAPI.Controllers
         }
 
         [HttpGet]
-        //[Authorize(Roles = "admin")]
+        [Authorize(Roles = "Admin")]
         public async Task<GetAllWalletsQueryResponse<List<WalletResponse>>> GetAll()
         {
             GetAllWalletsQueryRequest operation = new GetAllWalletsQueryRequest();
@@ -32,7 +33,7 @@ namespace PaparaProjectAPI.Controllers
         }
 
         [HttpGet("{UserId}")]
-        //[Authorize(Roles = "admin")]
+        [Authorize(Roles = "Admin,Normal")]
         public async Task<GetWalletByUserIdQueryResponse<WalletResponse>> Get([FromRoute] int UserId)
         {
             GetWalletByUserIdQueryRequest operation = new GetWalletByUserIdQueryRequest(UserId);
@@ -41,7 +42,7 @@ namespace PaparaProjectAPI.Controllers
         }
 
         [HttpPost]
-        //[Authorize(Roles = "admin")]
+        [Authorize(Roles = "Admin,Normal")]
         public async Task<ApiResponse<WalletResponse>> Post([FromBody] WalletRequest value)
         {
             CreateWalletCommandRequest operation = new CreateWalletCommandRequest(value);
@@ -50,7 +51,7 @@ namespace PaparaProjectAPI.Controllers
         }
 
         [HttpPut("{walletId}")]
-        //[Authorize(Roles = "admin")]
+        [Authorize(Roles = "Admin,Normal")]
         public async Task<ApiResponse<WalletResponse>> Put(int walletId, [FromBody] WalletRequest value)
         {
             UpdateWalletCommandRequest operation = new UpdateWalletCommandRequest(walletId, value);
@@ -59,7 +60,7 @@ namespace PaparaProjectAPI.Controllers
         }
 
         [HttpDelete("{walletId}")]
-        //[authorize(roles = "admin")]
+        [Authorize(Roles = "Admin,Normal")]
         public async Task<APIDeleteResponse> Delete(int walletId)
         {
             DeleteWalletCommandRequest operation = new DeleteWalletCommandRequest(walletId);

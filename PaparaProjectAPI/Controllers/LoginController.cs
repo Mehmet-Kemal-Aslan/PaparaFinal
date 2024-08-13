@@ -1,6 +1,5 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PaparaProjectBase.APIResponse;
 using PaparaProjectBusiness.Features.Commands.Login;
@@ -23,7 +22,6 @@ namespace PaparaProjectAPI.Controllers
 
         [HttpPost]
         [AllowAnonymous]
-        //[ResponseHeader("MyCustomHeaderInResponse", "POST")]
         public async Task<ApiResponse<LoginResponse>> Post([FromBody] LoginRequest value)
         {
             LoginCommandRequest operation = new LoginCommandRequest(value);

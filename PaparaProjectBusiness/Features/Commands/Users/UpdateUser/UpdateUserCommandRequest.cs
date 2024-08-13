@@ -8,8 +8,10 @@ namespace PaparaProjectBusiness.Features.Commands.Users.UpdateUser
 {
     public class UpdateUserCommandRequest : BaseUserRequest, IRequest<ApiResponse<UserResponse>>
     {
-        public UpdateUserCommandRequest(UserRequest request) : base(request)
+        public int userId { get; }
+        public UpdateUserCommandRequest(int Id, UserRequest request) : base(request)
         {
+            userId = Id;
         }
     }
 }

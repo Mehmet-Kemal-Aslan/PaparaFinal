@@ -12,6 +12,7 @@ namespace PaparaProjectBusiness.Validation.Validators
             RuleFor(u => u.UserName).NotEmpty().MinimumLength(2).MaximumLength(100);
             RuleFor(u => u.Password).NotEmpty().MinimumLength(5).MaximumLength(100);
             RuleFor(u => u.Email).NotEmpty().EmailAddress();
+            RuleFor(u => u.Address).NotEmpty();
         }
     }
 }

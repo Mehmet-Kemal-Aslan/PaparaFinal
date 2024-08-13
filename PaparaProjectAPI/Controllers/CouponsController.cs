@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Mvc;
 using PaparaProjectBase.APIResponse;
 using PaparaProjectBusiness.Features.Commands.Coupons.CreateCoupons;
 using PaparaProjectBusiness.Features.Commands.Coupons.DeleteCoupons;
-using PaparaProjectBusiness.Features.Commands.Coupons.UpdateCoupons;
 using PaparaProjectBusiness.Features.Queries.Coupons.GetAllCoupons;
 using PaparaProjectBusiness.Features.Queries.Coupons.GetCouponById;
 using PaparaProjectSchema.Requests;
@@ -24,7 +23,7 @@ namespace PaparaProjectAPI.Controllers
         }
 
         [HttpGet]
-        //[Authorize(Roles = "admin")]
+        [Authorize(Roles = "Admin,Normal")]
         public async Task<GetAllCouponsQueryResponse<List<CouponResponse>>> GetAll()
         {
             GetAllCouponsQueryRequest operation = new GetAllCouponsQueryRequest();
@@ -33,7 +32,7 @@ namespace PaparaProjectAPI.Controllers
         }
 
         [HttpGet("{couponId}")]
-        //[Authorize(Roles = "admin")]
+        [Authorize(Roles = "Admin,Normal")]
         public async Task<GetCouponByIdQueryResponse<CouponResponse>> Get([FromRoute] int couponId)
         {
             GetCouponByIdQueryRequest operation = new GetCouponByIdQueryRequest(couponId);
@@ -42,7 +41,7 @@ namespace PaparaProjectAPI.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = "string")]
+        [Authorize(Roles = "Admin")]
         public async Task<ApiResponse<CouponResponse>> Post([FromBody] CouponRequest value)
         {
             CreateCouponCommandRequest operation = new CreateCouponCommandRequest(value);
@@ -50,17 +49,8 @@ namespace PaparaProjectAPI.Controllers
             return result;
         }
 
-        [HttpPut("{couponId}")]
-        //[Authorize(Roles = "admin")]
-        public async Task<ApiResponse<CouponResponse>> Put(int couponId, [FromBody] CouponRequest value)
-        {
-            UpdateCouponCommandRequest operation = new UpdateCouponCommandRequest(couponId, value);
-            ApiResponse<CouponResponse> result = await mediator.Send(operation);
-            return result;
-        }
-
         [HttpDelete("{couponId}")]
-        //[authorize(roles = "admin")]
+        [Authorize(Roles = "Admin")]
         public async Task<APIDeleteResponse> Delete(int couponId)
         {
             DeleteCouponCommandRequest operation = new DeleteCouponCommandRequest(couponId);

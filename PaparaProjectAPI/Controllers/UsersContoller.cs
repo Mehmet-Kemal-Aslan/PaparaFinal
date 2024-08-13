@@ -26,7 +26,7 @@ namespace PaparaProjectAPI.Controllers
         }
 
         [HttpGet]
-        //[Authorize(Roles = "admin")]
+        [Authorize(Roles = "Admin")]
         public async Task<GetAllUsersQueryResponse<List<UserResponse>>> GetAll()
         {
             var operation = new GetAllUsersQueryRequest();
@@ -35,7 +35,7 @@ namespace PaparaProjectAPI.Controllers
         }
 
         [HttpGet("{UserId}")]
-        //[Authorize(Roles = "admin")]
+        [Authorize(Roles = "Admin")]
         public async Task<GetUserByIdQueryResponse<UserResponse>> Get([FromRoute] int UserId)
         {
             var operation = new GetUserByIdQueryRequest(UserId);
@@ -44,7 +44,6 @@ namespace PaparaProjectAPI.Controllers
         }
 
         [HttpPost]
-        //[Authorize(Roles = "admin")]
         public async Task<ApiResponse<UserResponse>> Post([FromBody] UserRequest value)
         {
             CreateUserCommandRequest operation = new CreateUserCommandRequest(value);
@@ -52,17 +51,17 @@ namespace PaparaProjectAPI.Controllers
             return result;
         }
 
-        [HttpPut]
-        //[Authorize(Roles = "admin")]
-        public async Task<ApiResponse<UserResponse>> Put([FromBody] UserRequest value)
+        [HttpPut("{userId}")]
+        [Authorize(Roles = "Admin,Normal")]
+        public async Task<ApiResponse<UserResponse>> Put(int userId, [FromBody] UserRequest value)
         {
-            var operation = new UpdateUserCommandRequest(value);
+            var operation = new UpdateUserCommandRequest(userId, value);
             var result = await mediator.Send(operation);
             return result;
         }
 
         [HttpDelete("{userId}")]
-        //[authorize(roles = "admin")]
+        [Authorize(Roles = "Admin,Normal")]
         public async Task<APIDeleteResponse> Delete(int userId)
         {
             var operation = new DeleteUserCommandRequest(userId);

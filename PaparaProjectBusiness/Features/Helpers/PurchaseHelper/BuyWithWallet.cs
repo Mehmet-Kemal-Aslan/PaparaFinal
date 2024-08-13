@@ -25,7 +25,7 @@ namespace PaparaProjectBusiness.Features.Helpers.PurchaseHelper
             if (balance < 0)
             {
                 wallet.Money = balance * (-1);
-                unitOfWork.WalletWriteRepository.Insert(wallet);
+                unitOfWork.WalletWriteRepository.Update(wallet);
                 unitOfWork.Complete();
                 return 0;
             }

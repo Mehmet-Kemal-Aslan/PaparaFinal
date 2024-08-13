@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PaparaProjectBase.APIResponse;
 using PaparaProjectBusiness.Features.Commands.Products.CreateProducts;
@@ -23,7 +24,6 @@ namespace PaparaProjectAPI.Controllers
         }
 
         [HttpGet]
-        //[Authorize(Roles = "admin")]
         public async Task<GetAllProductsQueryResponse<List<ProductResponse>>> GetAll()
         {
             GetAllProductsQueryRequest operation = new GetAllProductsQueryRequest();
@@ -32,7 +32,6 @@ namespace PaparaProjectAPI.Controllers
         }
 
         [HttpGet("{categoryId}")]
-        //[Authorize(Roles = "admin")]
         public async Task<GetProductsByCategoryResponse<ProductResponse>> GetBycategory([FromRoute] int categoryId)
         {
             GetProductsByCategoryRequest operation = new GetProductsByCategoryRequest(categoryId);
@@ -41,7 +40,7 @@ namespace PaparaProjectAPI.Controllers
         }
 
         [HttpPost]
-        //[Authorize(Roles = "admin")]
+        [Authorize(Roles = "Admin")]
         public async Task<ApiResponse<ProductResponse>> Post([FromBody] ProductRequest value)
         {
             CreateProductCommandRequest operation = new CreateProductCommandRequest(value);
@@ -50,7 +49,7 @@ namespace PaparaProjectAPI.Controllers
         }
 
         [HttpPut("{productId}")]
-        //[Authorize(Roles = "admin")]
+        [Authorize(Roles = "Admin")]
         public async Task<ApiResponse<ProductResponse>> Put(int productId, [FromBody] ProductRequest value)
         {
             UpdateProductCommandRequest operation = new UpdateProductCommandRequest(productId, value);
@@ -59,7 +58,7 @@ namespace PaparaProjectAPI.Controllers
         }
 
         [HttpDelete("{productId}")]
-        //[authorize(roles = "admin")]
+        [Authorize(Roles = "Admin")]
         public async Task<APIDeleteResponse> Delete(int productId)
         {
             DeleteProductCommandRequest operation = new DeleteProductCommandRequest(productId);

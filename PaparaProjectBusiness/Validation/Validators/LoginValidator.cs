@@ -1,10 +1,5 @@
 ﻿using FluentValidation;
 using PaparaProjectSchema.Requests;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PaparaProjectBusiness.Validation.Validators
 {
@@ -12,7 +7,7 @@ namespace PaparaProjectBusiness.Validation.Validators
     {
         public LoginValidator()
         {
-            RuleFor(x => x.UserName).NotEmpty().MaximumLength(2);
+            RuleFor(x => x.UserName).NotEmpty();
             RuleFor(x => x.Password).NotEmpty();
         }
     }

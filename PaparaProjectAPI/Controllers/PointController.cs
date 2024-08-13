@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PaparaProjectBusiness.Features.Queries.Categories.GetCategoryById;
@@ -19,7 +20,7 @@ namespace PaparaProjectAPI.Controllers
         }
 
         [HttpGet("{userId}")]
-        //[Authorize(Roles = "admin")]
+        [Authorize(Roles = "Normal")]
         public async Task<GetPointByUserIdQueryResponse<PointResponse>> Get([FromRoute] int userId)
         {
             GetPointByUserIdQueryRequest operation = new GetPointByUserIdQueryRequest(userId);

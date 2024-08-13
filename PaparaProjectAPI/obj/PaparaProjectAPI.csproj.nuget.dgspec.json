@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Mehmet Kemal\\Desktop\\Uygulama\\PaparaProject\\PaparaProjectApi\\PaparaProjectAPI.csproj": {}
+    "C:\\Users\\Mehmet Kemal\\Desktop\\Uygulama\\PaparaProject\\PaparaProjectAPI\\PaparaProjectAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Mehmet Kemal\\Desktop\\Uygulama\\PaparaProject\\PaparaProjectApi\\PaparaProjectAPI.csproj": {
+    "C:\\Users\\Mehmet Kemal\\Desktop\\Uygulama\\PaparaProject\\PaparaProjectAPI\\PaparaProjectAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mehmet Kemal\\Desktop\\Uygulama\\PaparaProject\\PaparaProjectApi\\PaparaProjectAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Mehmet Kemal\\Desktop\\Uygulama\\PaparaProject\\PaparaProjectAPI\\PaparaProjectAPI.csproj",
         "projectName": "PaparaProjectAPI",
-        "projectPath": "C:\\Users\\Mehmet Kemal\\Desktop\\Uygulama\\PaparaProject\\PaparaProjectApi\\PaparaProjectAPI.csproj",
+        "projectPath": "C:\\Users\\Mehmet Kemal\\Desktop\\Uygulama\\PaparaProject\\PaparaProjectAPI\\PaparaProjectAPI.csproj",
         "packagesPath": "C:\\Users\\Mehmet Kemal\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mehmet Kemal\\Desktop\\Uygulama\\PaparaProject\\PaparaProjectApi\\obj\\",
+        "outputPath": "C:\\Users\\Mehmet Kemal\\Desktop\\Uygulama\\PaparaProject\\PaparaProjectAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Mehmet Kemal\\AppData\\Roaming\\NuGet\\NuGet.Config",

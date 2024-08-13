@@ -10,10 +10,10 @@ using System.Threading.Tasks;
 
 namespace PaparaProjectBusiness.Features.Commands.Purchase.Purchase
 {
-    public class PurchaseCommandRequest : PurchaseResponse, IRequest<ApiResponse<PurchaseResponse>>
+    public class CreatePurchaseCommandRequest : OrderResponse, IRequest<ApiResponse<OrderResponse>>
     {
         public PurchaseRequest purchaseRequest { get; }
-        public PurchaseCommandRequest(PurchaseRequest request)
+        public CreatePurchaseCommandRequest(PurchaseRequest request)
         {
             purchaseRequest = request;
         }

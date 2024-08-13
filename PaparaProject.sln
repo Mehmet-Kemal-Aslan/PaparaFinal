@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaparaProjectAPI", "PaparaProjectAPI\PaparaProjectAPI.csproj", "{1E4737B3-90AE-42EE-AF08-75D31EEC12D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaparaProjectAPI", "PaparaProjectAPI\PaparaProjectAPI.csproj", "{1E4737B3-90AE-42EE-AF08-75D31EEC12D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaparaProjectBase", "PaparaProjectBase\PaparaProjectBase.csproj", "{F16D63A1-8E83-47C1-8A8B-E4F09BCB0801}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaparaProjectBase", "PaparaProjectBase\PaparaProjectBase.csproj", "{F16D63A1-8E83-47C1-8A8B-E4F09BCB0801}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaparaProjectBusiness", "PaparaProjectBusiness\PaparaProjectBusiness.csproj", "{6A718CD3-4193-4F21-8E5F-BA0715FAFBB1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaparaProjectBusiness", "PaparaProjectBusiness\PaparaProjectBusiness.csproj", "{6A718CD3-4193-4F21-8E5F-BA0715FAFBB1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaparaProjectData", "PaparaProjectData\PaparaProjectData.csproj", "{95B73DA7-2028-4DA7-98FE-4F7A7B6E543E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaparaProjectData", "PaparaProjectData\PaparaProjectData.csproj", "{95B73DA7-2028-4DA7-98FE-4F7A7B6E543E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaparaProjectSchema", "PaparaProjectSchema\PaparaProjectSchema.csproj", "{0C03236E-4DBF-40C6-91E4-972E5107FA70}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaparaProjectSchema", "PaparaProjectSchema\PaparaProjectSchema.csproj", "{0C03236E-4DBF-40C6-91E4-972E5107FA70}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

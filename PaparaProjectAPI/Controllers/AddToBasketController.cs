@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PaparaProjectBase.APIResponse;
 using PaparaProjectBusiness.Features.Commands.AddToBasket.AddToBasket;
@@ -19,7 +20,7 @@ namespace PaparaProjectAPI.Controllers
         }
 
         [HttpPost]
-        //[Authorize(Roles = "admin")]
+        [Authorize(Roles = "Admin,Normal")]
         public async Task<ApiResponse<BasketResponse>> Post([FromBody] AddToBasketRequest value)
         {
             AddToBasketCommandRequest operation = new AddToBasketCommandRequest(value);

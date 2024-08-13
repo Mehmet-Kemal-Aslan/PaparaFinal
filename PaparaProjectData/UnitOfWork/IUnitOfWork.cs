@@ -21,5 +21,9 @@ namespace PaparaProjectData.UnitOfWork
         IGenericWriteRepositoryBaseEntity<Basket> BasketWriteRepository { get; }
         IGenericReadRepositoryBaseEntity<BasketItem> BasketItemReadRepository { get; }
         IGenericWriteRepositoryBaseEntity<BasketItem> BasketItemWriteRepository { get; }
+        IGenericReadRepositoryBaseEntity<Order> OrderReadRepository { get; }
+        IGenericWriteRepositoryBaseEntity<Order> OrderWriteRepository { get; }
+        IGenericReadRepositoryBaseEntity<OrderDetail> OrderDetailReadRepository { get; }
+        IGenericWriteRepositoryBaseEntity<OrderDetail> OrderDetailWriteRepository { get; }
     }
 }

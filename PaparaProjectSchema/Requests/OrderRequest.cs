@@ -8,12 +8,8 @@ namespace PaparaProjectSchema.Requests
 {
     public class OrderRequest
     {
-        public string UserId { get; set; }
-        public string? Description { get; set; }
+        public int UserId { get; set; }
         public decimal Price { get; set; }
-        public decimal? CouponPrice { get; set; }
-        public int? CouponCode { get; set; }
-        public decimal? Point { get; set; }
         public string Address { get; set; }
         public DateTime DateTime { get; set; }
         public int? BasketId { get; set; }

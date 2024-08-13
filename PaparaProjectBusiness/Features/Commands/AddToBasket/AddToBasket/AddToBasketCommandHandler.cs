@@ -34,7 +34,7 @@ namespace PaparaProjectBusiness.Features.Commands.AddToBasket.AddToBasket
             }
 
             Basket basket = await unitOfWork.BasketReadRepository.FirstOrDefault(b => b.UserId == request.addToBasketRequest.UserId);
-            if (basket == null)
+            if (basket == null || basket.IsActive == false)
             {
                 basket = new Basket { UserId = request.addToBasketRequest.UserId };
                 await unitOfWork.BasketWriteRepository.Insert(basket);

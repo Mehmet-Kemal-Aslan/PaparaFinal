@@ -11,5 +11,6 @@ namespace PaparaProjectBase.Models.Messages
         public static string NotFound = "Bulunamadı!";
         public static string CategoryHasProducts = "Bu kategoriye ait ürünler var. Kategori silinemez!";
         public static string InvalidUserInformation = "Geçersiz kullanıcı bilgileri. Kullanıcı adı ve şifreyi kontorl edin.";
+        public static string InsufficientFund = "Yetersiz bakiye!";
     }
 }

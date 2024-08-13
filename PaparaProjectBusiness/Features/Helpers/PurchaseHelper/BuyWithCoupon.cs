@@ -23,12 +23,12 @@ namespace PaparaProjectBusiness.Features.Helpers.PurchaseHelper
         public async Task<decimal> CheckCoupon(string couponCode, decimal basketPrice)
         {
             if (string.IsNullOrEmpty(couponCode))
-                return 0;
+                return basketPrice;
 
             Coupon? coupon = await unitOfWork.CouponReadRepository.FirstOrDefault(c => c.Code == couponCode && DateTime.Now > c.ExpireDate);
 
             if (coupon is null )
-                return 0;
+                return basketPrice;
 
             decimal balance = basketPrice - coupon.Price;
 
